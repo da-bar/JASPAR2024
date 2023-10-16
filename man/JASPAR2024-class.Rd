@@ -18,7 +18,8 @@ of SQLite file.}
 
 \examples{
 
-JASPAR2024@db
+library(JASPAR2024)
+JASPAR2024
 
 }
 \author{
