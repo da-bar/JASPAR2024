@@ -2,9 +2,18 @@
 % Please edit documentation in R/AllClasses.R
 \name{db}
 \alias{db}
+\alias{db,JASPAR2024-method}
 \title{Access database from JASPAR2024 object}
 \usage{
 db(object)
+
+\S4method{db}{JASPAR2024}(object)
+}
+\arguments{
+\item{object}{JASPAR2024 class object}
+}
+\value{
+Returns the location of the JASPAR2024.sqlite file
 }
 \description{
 The accessor function for retrieving the location of the

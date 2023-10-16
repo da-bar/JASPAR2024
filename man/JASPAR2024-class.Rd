@@ -5,9 +5,12 @@
 \alias{JASPAR2024-class}
 \alias{JASPAR2024}
 \title{JASPAR2024 object class}
+\value{
+JASPAR2024-class
+}
 \description{
-The JASPAR2024 object class is a thin class for storing the path of
-JASPAR2024 style SQLite file.
+The JASPAR2024 object class is a thin class for storing the
+path of JASPAR2024 style SQLite file.
 }
 \section{Slots}{
 
