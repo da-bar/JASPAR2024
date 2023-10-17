@@ -28,6 +28,7 @@ You can easily access data in JASPAR using the RSQLite package as shown:
 library(JASPAR2024)
 library(RSQLite)
 
+JASPAR2024 <- JASPAR2024()
 JASPARConnect <- RSQLite::dbConnect(RSQLite::SQLite(), db(JASPAR2024))
 RSQLite::dbGetQuery(JASPARConnect, 'SELECT * FROM MATRIX LIMIT 5')
 dbDisconnect(JASPARConnect)

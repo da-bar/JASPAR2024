@@ -11,12 +11,58 @@
 #' @examples
 #'
 #' library(JASPAR2024)
-#' JASPAR2024
+#' library(RSQLite)
 #'
+#' JASPAR2024 <- JASPAR2024()
+#' JASPARConnect <- RSQLite::dbConnect(RSQLite::SQLite(), db(JASPAR2024))
+#' RSQLite::dbGetQuery(JASPARConnect, 'SELECT * FROM MATRIX LIMIT 5')
+#' dbDisconnect(JASPARConnect)
+#'
+#' @rdname JASPAR2024
 #' @import methods
+#' @import BiocFileCache
 #' @exportClass JASPAR2024
+#' @exportMethod initialize
+
 setClass("JASPAR2024", slots = c(db = "character")
          )
+
+#' rdname JASPAR2024
+#' @export
+
+setMethod("initialize", "JASPAR2024",
+          function(.Object, package = "JASPAR2024") {
+
+            metaData <- system.file("extdata", "metadata.csv", package=package)
+            if (!file.exists(metaData)) {
+              stop("metadata.csv not found in the specified package.")
+            }
+
+            metaDataDF <- read.csv(metaData)
+
+            if (!"SourceUrl" %in% colnames(metaDataDF)) {
+              stop("SourceUrl column not found in metadata.csv.")
+            }
+
+            url <- metaDataDF$SourceUrl
+            files <- bfcrpath(BiocFileCache(), url)
+
+            if (length(files) == 0) {
+              stop("No files found based on SourceUrl from metadata.csv.")
+            }
+
+            # This package should have only one file
+            .Object@db <- files[1]
+
+            return(.Object)
+          })
+
+#' @rdname JASPAR2024
+#' @export
+
+JASPAR2024 <- function() {
+  new("JASPAR2024")
+}
 
 #' @name db
 #'
@@ -35,9 +81,9 @@ setClass("JASPAR2024", slots = c(db = "character")
 #' @import methods
 #' @export
 
-setGeneric("db", function(object){
+setGeneric("db", function(object)
   standardGeneric("db")
-})
+)
 
 #' @rdname db
 

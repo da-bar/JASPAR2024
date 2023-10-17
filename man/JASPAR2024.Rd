@@ -5,6 +5,9 @@
 \alias{JASPAR2024-class}
 \alias{JASPAR2024}
 \title{JASPAR2024 object class}
+\usage{
+JASPAR2024()
+}
 \value{
 JASPAR2024-class
 }
@@ -22,7 +25,7 @@ of SQLite file.}
 \examples{
 
 library(JASPAR2024)
-JASPAR2024
+JASPAR2024 <- JASPAR2024()
 
 }
 \author{
