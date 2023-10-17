@@ -1,7 +1,7 @@
 Package: JASPAR2024
 Type: Package
 Title: Data package for JASPAR database (version 2024)
-Version: 0.99.4
+Version: 0.99.5
 Authors@R: person(given = "Damir", family = "Baranasic", 
                   role = c("aut", "cre"),
                   email = "damir.baranasic@lms.mrc.ac.uk", 
