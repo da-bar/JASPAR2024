@@ -22,6 +22,7 @@ database location slot from the JASPAR2024 object
 \examples{
 
 library(JASPAR2024)
+JASPAR2024 <- JASPAR2024()
 db(JASPAR2024)
 
 }

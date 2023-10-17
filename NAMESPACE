@@ -3,6 +3,6 @@
 export(JASPAR2024)
 export(db)
 exportClasses(JASPAR2024)
-exportMethods(initialize)
 import(BiocFileCache)
 import(methods)
+importFrom(utils,read.csv)

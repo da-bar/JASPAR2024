@@ -25,7 +25,12 @@ of SQLite file.}
 \examples{
 
 library(JASPAR2024)
+library(RSQLite)
+
 JASPAR2024 <- JASPAR2024()
+JASPARConnect <- RSQLite::dbConnect(RSQLite::SQLite(), db(JASPAR2024))
+RSQLite::dbGetQuery(JASPARConnect, 'SELECT * FROM MATRIX LIMIT 5')
+dbDisconnect(JASPARConnect)
 
 }
 \author{

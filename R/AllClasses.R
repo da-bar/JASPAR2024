@@ -20,15 +20,12 @@
 #'
 #' @rdname JASPAR2024
 #' @import methods
+#' @importFrom utils read.csv
 #' @import BiocFileCache
 #' @exportClass JASPAR2024
-#' @exportMethod initialize
 
 setClass("JASPAR2024", slots = c(db = "character")
          )
-
-#' rdname JASPAR2024
-#' @export
 
 setMethod("initialize", "JASPAR2024",
           function(.Object, package = "JASPAR2024") {
@@ -76,6 +73,7 @@ JASPAR2024 <- function() {
 #' @examples
 #'
 #' library(JASPAR2024)
+#' JASPAR2024 <- JASPAR2024()
 #' db(JASPAR2024)
 #'
 #' @import methods
