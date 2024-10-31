@@ -6,7 +6,7 @@ meta <- data.frame(
   BiocVersion = "3.18",
   Genome = NA,
   SourceType = "MySQL",
-  SourceUrl = "https://testjaspar.uio.no/download/database/JASPAR2024.sqlite",
+  SourceUrl = "https://jaspar2022.genereg.net/download/database/JASPAR2024.sqlite",
   SourceVersion = "Nov 10 20121",
   Species = NA,
   TaxonomyId = NA,
@@ -18,8 +18,8 @@ meta <- data.frame(
   RDataClass = "JASPAR2024",
   DispatchClass = "FilePath",
   ResourceName = "JASPAR2024",
-  Location_Prefix = "https://testjaspar.uio.no/",
-  RDataPath = "download/database/JASPAR2022.sqlite",
+  Location_Prefix = "https://jaspar.elixir.no/",
+  RDataPath = "download/database/JASPAR2024.sqlite",
   Tags = "AnnotationData:FunctionalAnnotation:AnnotationHub"
 )
 write.csv(meta, file=paste0(system.file("extdata",

@@ -6,7 +6,7 @@ Authors@R: person(given = "Damir", family = "Baranasic",
                   role = c("aut", "cre"),
                   email = "damir.baranasic@lms.mrc.ac.uk", 
                   comment = c(ORCID = "0000-0001-5948-0932"))
-Description: JASPAR (https://testjaspar.uio.no/) is a widely-used open-access 
+Description: JASPAR (https://jaspar.elixir.no/) is a widely-used open-access 
              database presenting manually curated high-quality and 
              non-redundant DNA-binding profiles for transcription factors (TFs) 
              across taxa. In this 10th release and 20th-anniversary update, 
@@ -30,7 +30,7 @@ Description: JASPAR (https://testjaspar.uio.no/) is a widely-used open-access
              their genomic regions of interest. 
 Depends: R (>= 4.3.0), methods, BiocFileCache, utils
 License: GPL-2
-URL: https://testjaspar.uio.no//
+URL: https://jaspar.elixir.no/
 NeedsCompilation: no
 biocViews: AnnotationData, FunctionalAnnotation, AnnotationHub
 LazyData: no
